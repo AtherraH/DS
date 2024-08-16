@@ -1,16 +1,8 @@
-/******************************************************************************
-
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
 #include <stdio.h>
 
 int main()
-{ int n,x,flag=0,left=0,right=n-1,mid,A[100],time=0;
-    time=time+4;
+{ int n,x,flag=0,left=0,right,mid,A[100],time=0;
+    time=time+3;
     printf("Enter no. of elements in array:");
     time++;
     scanf("%d",&n);
@@ -27,6 +19,8 @@ int main()
     time++;
     scanf("%d",&x);
     time++;
+    right=n-1;
+    time++;
     while(left<=right){
         time++;
         mid=(left+right)/2;
@@ -35,6 +29,7 @@ int main()
             time++;
             flag=1;
             time++;
+            break;
         }
         else if(x>A[mid]){
             time++;
@@ -61,7 +56,7 @@ int main()
     printf("Space complexity=%d \n", (7*4+n*4));
     time++;
     time++;
-    printf("Time complexity=%d \n", time+1);
+    printf("Time complexity=%d \n", time);
 
 }
 
