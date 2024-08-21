@@ -50,7 +50,7 @@ int main()
     }
     else {
         time++;
-        printf("Element found \n");
+        printf("Element found at %d position \n",mid+1);
         time++;
     }
     printf("Space complexity=%d \n", (7*4+n*4));
