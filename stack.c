@@ -1,62 +1,59 @@
-#include <stdio.h>
-void enqueue();
-void dequeue();
+#include<stdio.h>
+void push();
+void pop();
 void display();
-int A[50],front=-1,rear=-1,size,i;
-int main()
-{    int choice=0;
-     printf("Enter the size of queue: ");
-     scanf("%d",&size);   
-     while(choice!=4){
-     	printf("Enter Operation to perform on Queue: 1. Enqueue 2. Dequeue 3. Display 4. Exit \n");
-     	scanf("%d",&choice);
-     	switch(choice){
-     		case 1: enqueue();
-     			break;
-		case 2: dequeue();
-			break;
-		case 3: display();
-			break;
-		case 4: printf("Exited from program");
-		        break;
-		}
-      }
- }
- void enqueue(){
-  if(rear==size-1){
-   	printf("Overflow Error");
-   }
-   else if(front==-1&&rear==-1){ 
-   	rear++;
-   	front++;
-   	printf("Enter element to be inserted:");
-   	scanf("%d",&A[rear]);
-   	}
-   else{
-   	rear++;
-   	printf("Enter element to be inserted:");
-   	scanf("%d",&A[rear]);
-   	}
-   }
-  void dequeue(){
-  if (front==-1&&rear==-1){
-        printf("Underflow error");
-  } else {
-  printf("Deleted element is:%d\n",A[front]);
-  	if(front==rear){
-  	front=-1;
-  	rear=-1;
-        }else front++;
-      }
-   }
-   void display(){
-   if (front==-1&&rear==-1){
-        printf("Queue Empty \n");
-  }else{
-   printf("The Queue is: ");
-   for(i=front;i<=rear;i++){
-      printf("%d\t",A[i]);
-      }
-   printf("\n");
-  }
-  } 
+int stack[50],n,i,item,top=-1;
+void main()
+{
+    int choice=0;
+    printf("Enter the size of the stack: ");
+    scanf("%d",&n);
+    while (choice!=4) {
+        printf("\nChoose required operation: 1.Push \t2.Pop \t3.Display \t4.Exit - ");
+        scanf("%d",&choice);
+        switch (choice) {
+            case 1:
+                push();
+                break;
+            case 2:
+                pop();
+                break;
+            case 3:
+                display();
+                break;
+            case 4:
+                printf("\nExited from Program");
+                break;
+            default:
+                printf("\nInvalid Input");
+        }
+    }
+}
+void push() {
+    if (top==(n-1))
+        printf("\nOverflow Error!");
+    else {
+        printf("\nEnter element to be pushed: ");
+        scanf("%d",&item);
+        top++;
+        stack[top]=item;
+    }
+}
+void pop() {
+    if (top==-1)
+        printf("\nUnderflow Error!");
+    else {
+        printf("\nPopped item is %d",stack[top]);
+        top--;
+    }
+}
+void display() {
+    if (top==-1)
+        printf("\nStack is Empty!");
+    else {
+        printf("\nGiven stack is:");
+        for (i=top; i>=0; i--) {
+            printf("\n%d",stack[i]);
+        }
+    }
+}
