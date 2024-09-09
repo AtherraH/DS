@@ -33,7 +33,7 @@ int preced(char c) {
     }
 }
 
-void intopostfix(char *infix, char *postfix) {
+void intopostfix(char infix[], char postfix[]) {
     int i=0,j=0;
 
     for (i = 0; i < strlen(infix); i++) {
