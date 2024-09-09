@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-void swap(int *a, int *b) {
-    int t= *a;
-    *a = *b;
-    *b = t;
+void swap(int a, int b,int A[]) {
+    int t= A[a];
+    A[a] = A[b];
+    A[b] = t;
 }
 
 int part(int A[], int low, int high) {
@@ -13,11 +13,11 @@ int part(int A[], int low, int high) {
     for (int j = low; j <= high-1; j++) {
         if (A[j] < pivot) {
             i++;
-            swap(&A[i], &A[j]);
+            swap(i,j,A);
         }
     }
 
-    swap(&A[i+1], &A[high]);
+    swap(i+1,high,A);
     return (i+1);
 }
 
@@ -49,12 +49,12 @@ int main() {
     }
 
     printf("Original array: \n");
-    printArray(A, x);
+    printArray(A,x);
 
     quick(A,0,x-1);
 
     printf("Sorted array: \n");
-    printArray(A, x);
+    printArray(A,x);
 
     return 0;
 }
