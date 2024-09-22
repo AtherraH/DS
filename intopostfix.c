@@ -9,8 +9,9 @@ void main() {
     char infix[50];
     char ch;
     int i = 0, item;
-    printf("Enter the expression: ");
+    printf("Enter infix expression: ");
     scanf("%s", infix);
+    printf("Postfix expression: ");
     while (infix[i] != '\0') {
         ch = infix[i]; 
         if (ch == '(') {
